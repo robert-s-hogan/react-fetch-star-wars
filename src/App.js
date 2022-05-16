@@ -54,7 +54,7 @@ useEffect(() => {
             </label>
             <button type="submit">Search</button>
             </form>
-            {searchResults ? <p className="block text-center search-results">{data.length} results found</p> : ''}
+            {searchResults ? <p className="block text-center search-results">{data.length}</p> : ''}
             </div>
       <div className="container cardGrid">
       {loading ? (

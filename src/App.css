@@ -3,15 +3,16 @@
 :root {
     --primary: #ffe81f;
     --font-size: 16px;
-    --color: #ffffff;
     --font-star-wars: 'Poller One', cursive;
-
+    --dark: #000000;
+    --red: 	#d21c1c;
+    --light: #ffffff;
 }
 
 body {
     background: #000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top;
     z-index: 0;
-    color: var(--color);
+    color: var(--light);
     font-size: var(--font-size);
 }
 
@@ -85,9 +86,12 @@ ul {
 
 
 .search-results {
+    border-radius: 50%;
+    background: var(--red);
+    padding: .25rem .75rem;
     font-weight: 600;
-    font-size: .75rem;
-    font-style: italic;
+    font-size: 1.75rem;
+    color: var(--light);
 }
 
 /* CARD COMPONENT */
