@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
+
 :root {
     --primary: #ffe81f;
     --font-size: 16px;
     --color: #ffffff;
+    --font-star-wars: 'Poller One', cursive;
+
 }
 
 body {
@@ -35,3 +39,13 @@ input {
     border: 0;
     outline: 0;
 }
+
+h2, {
+    font-family: var(--font-star-wars);
+    font-size: 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+

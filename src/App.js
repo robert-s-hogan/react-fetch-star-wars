@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './components/header/Header';
+import Loading from './components/loading/Loading';
 import './App.css';
 import './components/pagination/pagination.css'
 
@@ -7,7 +8,7 @@ import './components/pagination/pagination.css'
 function App() {
   const [ loading, setLoading ] = useState(true);
   const [ data, setData ] = useState([]);
-  const [ character, setCharacter ] = useState('luke skywalker');
+  const [ character, setCharacter ] = useState('');
 
 
 useEffect(() => {
@@ -18,13 +19,15 @@ useEffect(() => {
     const response = await fetch(`https://swapi.dev/api/people/?page=1`);
     const json = await response.json();
     setData(json.results);
-    // setLoading(false);
+    setLoading(false);
   }
 
   async function searchData() {
+    setLoading(true);
     const response = await fetch(`https://swapi.dev/api/people/?search=${character}`);
     const json = await response.json();
     setData(json.results);
+    setLoading(false);
   }
 
   return (
@@ -50,14 +53,14 @@ useEffect(() => {
         </div>
       <div className="card-grid">
       {loading ? (
-        <h2>Loading...</h2>
+        <Loading />
       ) : (
         <div>
         {data.map(character => (
           <div className="card" key={character.name}>
               <ul>
                 <li>{character.name}</li>
-                </ul>
+              </ul>
           </div>
         ))}
         </div>
