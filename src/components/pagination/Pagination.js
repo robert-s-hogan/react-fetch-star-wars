@@ -1,13 +1,20 @@
-import './pagination.css'
+// import {useState, useEffect} from 'react';
+// import './pagination.css'
 
-const Pagination = () => {
-    return (
-        <div className="pagination">
-            <button>Previous</button>
-            <p>1/9</p>
-            <button>Next</button>
-        </div>
-    )
-}
+// const Pagination = () => {
+//     const [character, setCharacter] = useState('');
 
-export default Pagination;
+//     return (
+//         <div className="pagination">
+//            <form className="form">
+//             <label htmlFor="character">
+//                 <input id="character" value={character} placeholder="Search Star Wars Characters" 
+//                 onChange={(e) => setCharacter(e.target.value)} />
+//             </label>
+//             <button type="submit">Search</button>
+//             </form>
+//         </div>
+//     )
+// }
+
+// export default Pagination;

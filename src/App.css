@@ -1,7 +1,14 @@
+:root {
+    --primary: #ffe81f;
+    --font-size: 16px;
+    --color: #ffffff;
+}
+
 body {
     background: #000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top;
     z-index: 0;
-    color: var(--brand);
+    color: var(--color);
+    font-size: var(--font-size);
 }
 
 .mx-auto {
@@ -12,4 +19,19 @@ body {
 
 button {
     min-width: 125px;
+    background: var(--primary);
+    border: var(--primary);
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+}
+
+p {
+    color: inherit;
+}
+
+input {
+    margin: 0;
+    padding: .75rem 0;
+    border: 0;
+    outline: 0;
 }
