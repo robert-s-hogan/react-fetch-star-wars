@@ -7,6 +7,7 @@
     --dark: #000000;
     --red: 	#d21c1c;
     --light: #ffffff;
+    --border-radius: 10px;
 }
 
 body {
@@ -28,6 +29,7 @@ button {
     border: var(--primary);
     font-size: 1.25rem;
     padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
 }
 
 p {
@@ -39,6 +41,7 @@ input {
     padding: .75rem 0;
     border: 0;
     outline: 0;
+    border-radius: var(--border-radius);
 }
 
 h2, {
@@ -48,6 +51,7 @@ h2, {
 
 ul {
     list-style: none;
+    padding: 0;
 }
 
 .container {
@@ -122,6 +126,7 @@ ul {
     display: flex;
     flex-direction: column;
     padding: 0 1rem;
+    color: var(--primary);
     width: 100%;
   }
   

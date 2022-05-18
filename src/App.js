@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './components/header/Header';
 import Loading from './components/loading/Loading';
-import Card from './/components/card/Card';
 
 import StarWarsLogo from './Starwars-logo.webp';
 import './App.css';
@@ -81,16 +80,6 @@ useEffect(() => {
               </div>
             </div>
           ))}
-
-
-
-
-          {/* <div className="card" key={character.name}>
-          
-              <ul>
-                <li>{character.name}</li>
-              </ul>
-          </div> */}
         </>
       )}
 
