@@ -9,7 +9,7 @@ import './components/pagination/pagination.css'
 
 function App() {
   const [ loading, setLoading ] = useState(true);
-  const [ data, setData ] = useState([]);
+  const [ data, setData ] = useState<any[]>([]);
   const [ character, setCharacter ] = useState('');
   const [ searchResults, setSearchResults ] = useState(false);
 

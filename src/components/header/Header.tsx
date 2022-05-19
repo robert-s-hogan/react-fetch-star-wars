@@ -1,7 +1,7 @@
 import GithubLogo from './github-icon.png';
 import "./header.css";
 
-const Header = () => {
+const Header: React.FC = () => {
     return (
         <header>
             <a href="https://github.com/robert-s-hogan/react-query-pagination-assessment">
