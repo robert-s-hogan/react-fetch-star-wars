@@ -1,91 +1,100 @@
 import { useState, useEffect } from 'react';
 import Header from './components/header/Header';
 import Loading from './components/loading/Loading';
+import { useGetPosts } from './lib/api-hooks';
+import { FetchState } from './types';
 
 import StarWarsLogo from './Starwars-logo.webp';
 import './App.css';
-import './components/pagination/pagination.css'
-
+import './components/pagination/pagination.css';
 
 function App() {
-  const [ loading, setLoading ] = useState(true);
-  const [ data, setData ] = useState<any[]>([]);
-  const [ character, setCharacter ] = useState('');
-  const [ searchResults, setSearchResults ] = useState(false);
+  const [data, fetchState, getData] = useGetPosts();
+  // const [character, setCharacter] = useState('');
+  // const [searchResults, setSearchResults] = useState(false);
 
-useEffect(() => {
-  getData();
-}, []);
+  useEffect(() => {
+    getData();
+  }, []);
 
-  async function getData() {
-    const response = await fetch(`https://swapi.dev/api/people/?page=1`);
-    const json = await response.json();
-    setData(json.results);
-    setLoading(false);
-  }
+  // async function searchData() {
+  //   const response = await fetch(
+  //     `https://swapi.dev/api/people/?search=${character}`
+  //   );
+  //   const json = await response.json();
+  //   setData(json.results);
+  //   setSearchResults(true);
+  // }
 
-  async function searchData() {
-    setLoading(true);
-    const response = await fetch(`https://swapi.dev/api/people/?search=${character}`);
-    const json = await response.json();
-    setData(json.results);
-    setLoading(false);
-    setSearchResults(true);
-  }
-
+  console.log(fetchState);
   return (
     <div>
       <Header />
       <img
-          width="320"
-          className="mx-auto"
-          src={StarWarsLogo}
-          alt="Star Wars Logo"
-        />
-      <div className="pagination container">
-           <form className="form" onSubmit={(e) => {
+        width="320"
+        className="mx-auto"
+        src={StarWarsLogo}
+        alt="Star Wars Logo"
+      />
+      {/* <div className="pagination container">
+        <form
+          className="form"
+          onSubmit={(e) => {
             e.preventDefault();
             searchData();
-           }}>
-            <label htmlFor="character">
-                <input id="character" value={character} placeholder="Search Star Wars Characters" 
-                onChange={(e) => setCharacter(e.target.value)} />
-            </label>
-            <button type="submit">Search</button>
-            </form>
-            {searchResults ? <p className="block text-center search-results">{data.length}</p> : ''}
-            </div>
+          }}
+        >
+          <label htmlFor="character">
+            <input
+              id="character"
+              value={character}
+              placeholder="Search Star Wars Characters"
+              onChange={(e) => setCharacter(e.target.value)}
+            />
+          </label>
+          <button type="submit">Search</button>
+        </form>
+        {searchResults ? (
+          <p className="block text-center search-results">{data.length}</p>
+        ) : (
+          ''
+        )}
+      </div> */}
       <div className="container cardGrid">
-      {loading ? (
-        <Loading />
-      ) : (
-        <>
-          {data.map((character) => (
-            <div
-              className="card"
-              title={character.name}
-              key={character.name}
-            >
-            <div className="card-inner">
-              <h3 className="card-title">{character.name}</h3>
-              <ul>
-                <li>Mass: {character.mass}</li>
-                <li>Height: {character.height}</li>
-                <li>Hair Color: {character.hair_color}</li>
-                <li>Skin Color: {character.skin_color}</li>
-                <li>Eye Color: {character.eye_color}</li>
-                <li>Birth Year: {character.birth_year}</li>
-                <li>Gender: {character.gender}</li>
-              </ul>
+        {fetchState === FetchState.ERROR && (
+          <>
+            <p>Oops! Something went wrong. Please click the button below</p>
+            <button onClick={() => getData()}>Get Star Wars Characters</button>
+          </>
+        )}
+        {fetchState === FetchState.LOADING && (
+          <>
+            <Loading />
+          </>
+        )}
+        {fetchState === FetchState.SUCCESS && (
+          <>
+            {data.map((char) => (
+              <div className="card" key={char.name}>
+                <div className="card-inner">
+                  <h3 className="card-title">{char.name}</h3>
+                  <ul>
+                    <li>Mass: {char.mass}</li>
+                    <li>Height: {char.height}</li>
+                    <li>Hair Color: {char.hair_color}</li>
+                    <li>Skin Color: {char.skin_color}</li>
+                    <li>Eye Color: {char.eye_color}</li>
+                    <li>Birth Year: {char.birth_year}</li>
+                    <li>Gender: {char.gender}</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          ))}
-        </>
-      )}
-
+            ))}
+          </>
+        )}
       </div>
     </div>
-    );
+  );
 }
 
 export default App;
