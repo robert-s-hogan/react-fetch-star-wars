@@ -1,13 +1,101 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poller+One&family=Roboto+Flex:opsz,wght@8..144,300;8..144,600;8..144,1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-3xl font-serif font-semibold;
+  }
+  h2 {
+    @apply text-2xl font-serif font-semibold;
+  }
+  h3 {
+    @apply text-xl font-serif font-semibold;
+  }
+  p {
+    @apply text-base font-serif;
+  }
+  body {
+    @apply text-base font-serif bg-blue;
+  }
+  ul {
+    @apply p-0;
+  }
+  input {
+    @apply border-black border-solid rounded-lg py-3 px-0 my-0 border-0 outline-none text-center;
+  }
+  button[type='submit'] {
+    @apply border-black text-black border-solid rounded-lg py-2 px-4 font-semibold font-serif text-3xl bg-yellow;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .card {
+    @apply border-black text-black border-2;
+  }
+  .card-inner {
+    @apply bg-white;
+  }
+  .letter-box {
+    @apply bg-white text-white font-bold border-black rounded-lg px-4 py-2 text-3xl;
+  }
+  .card-title {
+    @apply text-2xl text-black font-sans p-2 border-black border-b-4 bg-transparent;
+  }
+}
+/* body {
+  background: #000 url('./lib/img/stars.png') repeat top;
+} */
+
+button,
+input,
+.card,
+.letter-box {
+  -webkit-box-shadow: 6px 6px 0px 0px #0c0c0c;
+  box-shadow: 6px 6px 0px 0px #0c0c0c;
+  border-radius: 4px;
+  border: 6px solid #0c0c0c;
+}
+
+.background-black {
+  @apply bg-black text-white;
+}
+.background-blue {
+  @apply bg-darkBlue text-white;
+}
+.background-blue-gray {
+  @apply bg-gradient-to-r from-darkBlue via-blue to-grey text-white;
+}
+.background-brown {
+  @apply bg-brown text-white;
+}
+.background-white {
+  @apply bg-white;
+}
+.background-yellow,
+.background-gold {
+  @apply bg-yellow;
+}
+.background-orange {
+  @apply bg-orange;
+}
+.background-red {
+  @apply bg-red text-white;
+}
+.background-green {
+  @apply bg-green text-white;
+}
+.background-purple {
+  @apply bg-purple;
+}
+.background-pink {
+  @apply bg-pink;
+}
+.background-unknown {
+  @apply bg-white;
+}
+.background-hazel {
+  @apply bg-green;
 }
