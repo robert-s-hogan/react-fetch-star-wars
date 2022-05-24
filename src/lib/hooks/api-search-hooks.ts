@@ -2,17 +2,19 @@ import axios from 'axios';
 import { useState } from 'react';
 import { FetchState, PostData } from '../../types';
 
-export function useGetPosts() {
+export function useSearchPosts(character) {
   const [fetchState, setFetchState] = useState(FetchState.DEFAULT);
   const [data, setData] = useState<Array<PostData>>([]);
-  const [totalEntries, setTotalEntries] = useState(0);
-  const getPosts = async () => {
+  const [searchResults, setSearchResults] = useState(false);
+  const searchPosts = async () => {
     try {
       setFetchState(FetchState.LOADING);
-      const res = await axios.get('https://swapi.dev/api/people/?page=1');
+      const res = await axios.get(
+        `https://swapi.dev/api/people/?search=${character}`
+      );
       const resData = res.data as Array<PostData>;
 
-      setTotalEntries(resData.count);
+      setSearchResults(true);
       setData(resData.results);
       setFetchState(FetchState.SUCCESS);
     } catch (err) {
@@ -20,5 +22,5 @@ export function useGetPosts() {
     }
   };
 
-  return [data, totalEntries, fetchState, getPosts];
+  return [data, searchResults, fetchState, searchPosts];
 }

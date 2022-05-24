@@ -27,7 +27,7 @@
     @apply border-black border-solid rounded-lg py-3 px-0 my-0 border-0 outline-none text-center;
   }
   button[type='submit'] {
-    @apply border-black text-black border-solid rounded-lg py-2 px-4 font-semibold font-serif text-3xl bg-yellow;
+    @apply border-black text-white border-solid rounded-lg py-2 px-4 font-serif text-3xl bg-yellow;
   }
 }
 
@@ -42,7 +42,7 @@
     @apply bg-white text-white font-bold border-black rounded-lg px-4 py-2 text-3xl;
   }
   .card-title {
-    @apply text-2xl text-black font-sans p-2 border-black border-b-4 bg-transparent;
+    @apply text-2xl text-white font-sans p-2 border-black border-b-4 bg-transparent;
   }
 }
 /* body {
@@ -60,16 +60,16 @@ input,
 }
 
 .background-black {
-  @apply bg-black text-white;
+  @apply bg-black;
 }
 .background-blue {
-  @apply bg-darkBlue text-white;
+  @apply bg-darkBlue;
 }
 .background-blue-gray {
-  @apply bg-gradient-to-r from-darkBlue via-blue to-grey text-white;
+  @apply bg-gradient-to-r from-darkBlue via-blue to-grey;
 }
 .background-brown {
-  @apply bg-brown text-white;
+  @apply bg-brown;
 }
 .background-white {
   @apply bg-white;
@@ -82,10 +82,10 @@ input,
   @apply bg-orange;
 }
 .background-red {
-  @apply bg-red text-white;
+  @apply bg-red;
 }
 .background-green {
-  @apply bg-green text-white;
+  @apply bg-green;
 }
 .background-purple {
   @apply bg-purple;
