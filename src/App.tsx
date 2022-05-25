@@ -84,7 +84,7 @@ function App() {
                 <>
                   {searchData.map((char) => (
                     <div className="card rounded-lg relative" key={char.name}>
-                      <CardTitle char={char} />
+                      <CardTitle name={char.name} eyeColor={char.eye_color} />
                       <img
                         src={StarWarsLogo}
                         alt={char.name}
