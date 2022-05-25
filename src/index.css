@@ -42,7 +42,7 @@
     @apply bg-white text-white font-bold border-black rounded-lg px-4 py-2 text-3xl;
   }
   .card-title {
-    @apply text-2xl text-white font-sans p-2 border-black border-b-4 bg-transparent;
+    @apply text-2xl text-white font-sans p-2 border-black bg-transparent px-1 lg:text-lg m-0 font-semibold border-b-4 whitespace-nowrap;
   }
 }
 /* body {
