@@ -27,7 +27,7 @@
     @apply border-black border-solid rounded-lg py-3 px-0 my-0 border-0 outline-none text-center;
   }
   button[type='submit'] {
-    @apply border-black text-white border-solid rounded-lg py-2 px-4 font-serif text-3xl bg-yellow;
+    @apply border-black text-white border-solid rounded-lg py-2 px-4 font-serif text-3xl bg-pink;
   }
 }
 
@@ -42,7 +42,7 @@
     @apply bg-white text-white font-bold border-black rounded-lg px-4 py-2 text-3xl;
   }
   .card-title {
-    @apply text-2xl text-white font-sans p-2 border-black bg-transparent px-1 lg:text-lg m-0 font-semibold border-b-4 whitespace-nowrap;
+    @apply text-2xl font-sans p-2 border-black bg-yellow text-black px-1 lg:text-lg m-0 font-semibold border-b-4 whitespace-nowrap;
   }
 }
 /* body {
@@ -75,15 +75,61 @@ body {
 .bg-blue-gray {
   @apply bg-gradient-to-r from-darkBlue via-skyBlue to-grey;
 }
+.bg-green-tan-brown {
+  @apply bg-gradient-to-r from-green via-tan to-brown;
+}
+.bg-fair-green-yellow {
+  @apply bg-gradient-to-r from-fair via-green to-yellow;
+}
+.bg-grey-green-yellow {
+  @apply bg-gradient-to-r from-grey via-green to-yellow;
+}
+.bg-red-blue-white {
+  @apply bg-gradient-to-r from-red via-blue to-white;
+}
+.bg-white-blue {
+  @apply bg-gradient-to-r from-white to-darkBlue;
+}
+.bg-white-red {
+  @apply bg-gradient-to-r from-white to-red;
+}
+.bg-brown-white {
+  @apply bg-gradient-to-r from-brown to-white;
+}
+.bg-green-yellow {
+  @apply bg-gradient-to-r from-green to-yellow;
+}
+.bg-silver-red {
+  @apply bg-gradient-to-r from-silver to-red;
+}
+.bg-green-grey {
+  @apply bg-gradient-to-r from-green to-grey;
+}
+.bg-brown-grey {
+  @apply bg-gradient-to-r from-brown to-grey;
+}
+.bg-auburn-white {
+  @apply bg-gradient-to-r from-brown to-grey;
+}
+.bg-auburn-grey {
+  @apply bg-gradient-to-r from-auburn to-grey;
+}
+.bg-grey-red {
+  @apply bg-gradient-to-r from-grey to-red;
+}
+.bg-blue-grey {
+  @apply bg-gradient-to-r from-blue to-grey;
+}
+.bg-grey-blue {
+  @apply bg-gradient-to-r from-grey to-blue;
+}
 .background-brown {
   @apply bg-brown;
 }
 .background-white {
   @apply bg-white;
 }
-.background-yellow,
-.background-gold,
-.bg-blond {
+.background-yellow {
   @apply bg-yellow;
 }
 .background-orange {
@@ -106,4 +152,33 @@ body {
 }
 .background-hazel {
   @apply bg-green;
+}
+.bg-fair {
+  background: #ffd6a4;
+}
+.bg-light {
+  background: #fbe5ba;
+}
+.bg-pale {
+  background: #fdf5e2;
+}
+.bg-hazel {
+  background: #637f19;
+}
+.bg-metal {
+  background-color: #5b6467;
+  background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+}
+.bg-dark {
+  background: #6f4f1d;
+}
+.bg-grey {
+  background: #999999;
+}
+.bg-blond {
+  background: #faf0be;
+}
+.background-gold,
+.bg-gold {
+  background: #ffd700;
 }

@@ -21,10 +21,7 @@ function App() {
   const [character, setCharacter] = useState('');
   const [searchResults, setSearchResults] = useState(false);
   const [searchData, setSearchData] = useState([]);
-
   const [allData, fetchState, getAllData] = useGetAllData();
-
-  const [homeworld, setHomeworld] = useState('');
 
   useEffect(() => {
     // getData();
@@ -44,7 +41,7 @@ function App() {
     <div>
       <Header />
       <Hero />
-      <div className="flex justify-center max-w-4xl container mx-auto mt-8">
+      <div className="flex justify-center max-w-4xl xl:max-w-7xl container mx-auto mt-8">
         <form
           className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full mx-2"
           onSubmit={(e) => {
@@ -87,7 +84,7 @@ function App() {
         )}
         {fetchState === FetchState.SUCCESS && (
           <div className="mx-3 my-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
               {searchResults && searchData.length > 0 ? (
                 <>
                   {searchData.map((char) => (
@@ -97,6 +94,7 @@ function App() {
                         hairColor={char.hair_color}
                         eyeColor={char.eye_color}
                         gender={char.gender}
+                        skinColor={char.skin_color}
                       />
                       <div className="text-xs flex justify-center p-1 text-black bg-yellow">
                         <span className="mr-1 p-1 px-2 font-semibold">
@@ -144,6 +142,7 @@ function App() {
                         hairColor={char.hair_color}
                         eyeColor={char.eye_color}
                         gender={char.gender}
+                        skinColor={char.skin_color}
                       />
                       <div className="text-xs flex justify-center p-1 text-black bg-yellow">
                         <span className="mr-1 p-1 px-2 font-semibold">

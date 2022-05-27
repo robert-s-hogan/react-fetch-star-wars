@@ -36,6 +36,10 @@ export function useGetAllData() {
             (planet) => planet.url === person.homeworld
           );
           person.homeworld = Object.assign([], planet);
+          const cleanedSkinColor = person.skin_color.replace(/, /g, '-');
+          person.skin_color = cleanedSkinColor;
+          const cleanedHairColor = person.hair_color.replace(/, /g, '-');
+          person.hair_color = cleanedHairColor;
         });
       }
 
