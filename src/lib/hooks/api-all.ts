@@ -14,15 +14,24 @@ export function useGetAllData() {
       const promise = Promise.allSettled([
         await axios.get('https://swapi.dev/api/people/'),
         await axios.get('https://swapi.dev/api/planets/'),
+        await axios.get('https://swapi.dev/api/films/'),
       ]);
 
-      const [starWarsPeople, starWarsPlanets] = await promise;
+      const [starWarsPeople, starWarsPlanets, starWarsFilms] = await promise;
 
       const peopleData = starWarsPeople.value.data.results;
       const planetsData = starWarsPlanets.value.data.results;
+      const filmsData = starWarsFilms.value.data.results;
 
       {
         peopleData.map((person) => {
+          const film = filmsData.find((film) => {
+            film.characters.map((character) => {
+              if (character === person.url) {
+                person.film = Object.assign([], film);
+              }
+            });
+          });
           const planet = planetsData.find(
             (planet) => planet.url === person.homeworld
           );
@@ -32,8 +41,6 @@ export function useGetAllData() {
 
       setAllData(peopleData);
       setFetchState(FetchState.SUCCESS);
-
-      console.log(allData);
     } catch (err) {
       setFetchState(FetchState.ERROR);
       console.log(err);

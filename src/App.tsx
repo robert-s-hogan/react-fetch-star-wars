@@ -11,8 +11,8 @@ import Loading from './components/loading/Loading';
 
 import CardTitle from './components/cardTitle/CardTitle';
 import CardHomeworld from './components/cardHomeworld/CardHomeworld';
+import CardFace from './components/cardFace/CardFace';
 
-import StarWarsLogo from './lib/img/Starwars-logo.webp';
 import './index.css';
 
 function App() {
@@ -93,12 +93,11 @@ function App() {
                   {searchData.map((char) => (
                     <div className="card rounded-lg relative" key={char.name}>
                       <CardTitle name={char.name} eyeColor={char.eye_color} />
-                      <img
-                        src={StarWarsLogo}
-                        alt={char.name}
-                        className="w-full mx-auto object-contain h-48"
+                      <CardFace
+                        hairColor={char.hair_color}
+                        eyeColor={char.eye_color}
+                        gender={char.gender}
                       />
-
                       <div className="text-xs flex justify-center p-1 text-black bg-yellow">
                         <span className="mr-1 p-1 px-2 font-semibold">
                           Mass: {char.mass}
@@ -110,7 +109,6 @@ function App() {
                           DOB: {char.birth_year}
                         </span>
                       </div>
-
                       <div className="card-inner h-auto flex flex-col px-1 py-3">
                         <CardHomeworld homeworld={char.homeworld} />
                         <ul className="px-4">
@@ -120,10 +118,11 @@ function App() {
                           <li className="my-1 mx-0">
                             Skin Color: {char.skin_color}
                           </li>
+                          <li className="my-1 mx-0">Gender: {char.gender}</li>
                           <li className="my-1 mx-0">
                             Eye Color: {char.eye_color}
                           </li>
-                          <li className="my-1 mx-0">Gender: {char.gender}</li>
+
                           {/* <li className="my-1 mx-0">{char.vehicles}</li>
                       <li className="my-1 mx-0">{char.starships}</li>
                       <li className="my-1 mx-0">{char.films}</li> */}
@@ -141,12 +140,11 @@ function App() {
                   {allData.map((char) => (
                     <div className="card rounded-lg relative" key={char.name}>
                       <CardTitle name={char.name} eyeColor={char.eye_color} />
-                      <img
-                        src={StarWarsLogo}
-                        alt={char.name}
-                        className="w-full mx-auto object-contain h-48"
+                      <CardFace
+                        hairColor={char.hair_color}
+                        eyeColor={char.eye_color}
+                        gender={char.gender}
                       />
-
                       <div className="text-xs flex justify-center p-1 text-black bg-yellow">
                         <span className="mr-1 p-1 px-2 font-semibold">
                           Mass: {char.mass}
@@ -169,10 +167,10 @@ function App() {
                           <li className="my-1 mx-0">
                             Skin Color: {char.skin_color}
                           </li>
+                          <li className="my-1 mx-0">Gender: {char.gender}</li>
                           <li className="my-1 mx-0">
                             Eye Color: {char.eye_color}
                           </li>
-                          <li className="my-1 mx-0">Gender: {char.gender}</li>
                           {/* <li className="my-1 mx-0">{char.vehicles}</li>
                       <li className="my-1 mx-0">{char.starships}</li>
                       <li className="my-1 mx-0">{char.films}</li> */}

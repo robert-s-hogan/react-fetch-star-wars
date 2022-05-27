@@ -6,7 +6,6 @@ module.exports = {
       white: '#fff',
       orange: '#db5f0c',
       purple: '#9312db',
-      blue: '#4c3cfa',
       brown: '#622c22',
       green: '#4eda12',
       red: '#d51449',
@@ -16,6 +15,7 @@ module.exports = {
       skyBlue: '#0cdad0',
       darkBlue: '#1111de',
       limeGreen: '#b9da10',
+      skin: '#ffcd94',
       transparent: 'rgba(0, 0, 0, 0)',
     },
     fontFamily: {
