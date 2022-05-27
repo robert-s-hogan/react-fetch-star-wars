@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useGetPosts } from './lib/hooks/api-hooks';
+// import { useGetPosts } from './lib/hooks/api-hooks';
+import { useGetAllData } from './lib/hooks/api-all';
 import { FetchState } from './types';
 import axios from 'axios';
 
@@ -9,18 +10,25 @@ import Loading from './components/loading/Loading';
 // import SearchBar from './components/searchBar/SearchBar';
 
 import CardTitle from './components/cardTitle/CardTitle';
+import CardHomeworld from './components/cardHomeworld/CardHomeworld';
 
 import StarWarsLogo from './lib/img/Starwars-logo.webp';
 import './index.css';
 
 function App() {
-  const [data, totalEntries, fetchState, getData] = useGetPosts();
+  // const [data, totalEntries, fetchState, getData] = useGetPosts();
+
   const [character, setCharacter] = useState('');
   const [searchResults, setSearchResults] = useState(false);
   const [searchData, setSearchData] = useState([]);
 
+  const [allData, fetchState, getAllData] = useGetAllData();
+
+  const [homeworld, setHomeworld] = useState('');
+
   useEffect(() => {
-    getData();
+    // getData();
+    getAllData();
   }, []);
 
   async function getSearchData() {
@@ -104,11 +112,7 @@ function App() {
                       </div>
 
                       <div className="card-inner h-auto flex flex-col px-1 py-3">
-                        <p>
-                          <span className="text-sm badge bg-red text-white rounded py-1 px-2 mx-4 border-gray-400 mb-2">
-                            {char.homeworld}
-                          </span>
-                        </p>
+                        <CardHomeworld homeworld={char.homeworld} />
                         <ul className="px-4">
                           <li className="my-1 mx-0">
                             Hair Color: {char.hair_color}
@@ -134,7 +138,7 @@ function App() {
                 </>
               ) : (
                 <>
-                  {data.map((char) => (
+                  {allData.map((char) => (
                     <div className="card rounded-lg relative" key={char.name}>
                       <CardTitle name={char.name} eyeColor={char.eye_color} />
                       <img
@@ -156,11 +160,8 @@ function App() {
                       </div>
 
                       <div className="card-inner h-auto flex flex-col px-1 py-3">
-                        <p>
-                          <span className="text-sm badge bg-red text-white rounded py-1 px-2 mx-4 border-gray-400 mb-2">
-                            {char.homeworld}
-                          </span>
-                        </p>
+                        <CardHomeworld homeworld={char.homeworld['name']} />
+
                         <ul className="px-4">
                           <li className="my-1 mx-0">
                             Hair Color: {char.hair_color}
