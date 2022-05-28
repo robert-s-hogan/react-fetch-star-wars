@@ -42,7 +42,7 @@ export function useGetAllData() {
           person.hair_color = cleanedHairColor;
         });
       }
-
+      console.log(allData);
       setAllData(peopleData);
       setFetchState(FetchState.SUCCESS);
     } catch (err) {

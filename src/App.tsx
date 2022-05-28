@@ -10,8 +10,8 @@ import Loading from './components/loading/Loading';
 // import SearchBar from './components/searchBar/SearchBar';
 
 import CardTitle from './components/cardTitle/CardTitle';
-import CardHomeworld from './components/cardHomeworld/CardHomeworld';
 import CardFace from './components/cardFace/CardFace';
+import CardHomeworld from './components/cardHomeworld/CardHomeworld';
 
 import './index.css';
 
@@ -96,42 +96,37 @@ function App() {
                         gender={char.gender}
                         skinColor={char.skin_color}
                       />
-                      <div className="text-xs flex justify-center p-1 text-black bg-yellow">
-                        <span className="mr-1 p-1 px-2 font-semibold">
-                          Mass: {char.mass}
-                        </span>
-                        <span className="mr-1 p-1 px-2 font-semibold border-l border-gray-400">
-                          Height: {char.height}
-                        </span>
-                        <span className="mr-1 p-1 px-2 font-semibold border-l border-gray-400">
-                          DOB: {char.birth_year}
-                        </span>
-                      </div>
-                      <div className="card-inner h-auto flex flex-col px-1 py-3">
-                        <CardHomeworld homeworld={char.homeworld} />
-                        <ul className="px-4">
-                          <li className="my-1 mx-0">
-                            Hair Color: {char.hair_color}
-                          </li>
-                          <li className="my-1 mx-0">
-                            Skin Color: {char.skin_color}
-                          </li>
-                          <li className="my-1 mx-0">Gender: {char.gender}</li>
-                          <li className="my-1 mx-0">
-                            Eye Color: {char.eye_color}
-                          </li>
-
-                          {/* <li className="my-1 mx-0">{char.vehicles}</li>
-                      <li className="my-1 mx-0">{char.starships}</li>
-                      <li className="my-1 mx-0">{char.films}</li> */}
-                          {/* <li className="my-1 mx-0">Species: {char.species}</li> */}
-                          {/* <li className="my-1 mx-0">{char.created}</li>
-                      <li className="my-1 mx-0">{char.edited}</li> */}
-                          <li className="my-1 mx-0">{char.url}</li>
-                        </ul>
+                      <div className="hidden hover:block">
+                        <div className="text-xs flex justify-center p-1 text-black bg-yellow none hover:block">
+                          <CardHomeworld homeworld={char.homeworld} />
+                          {char.homeworld}
+                          <span className="mr-1 p-1 px-2 font-semibold">
+                            Mass: {char.mass}
+                          </span>
+                          <span className="mr-1 p-1 px-2 font-semibold border-l border-gray-400">
+                            Height: {char.height}
+                          </span>
+                          <span className="mr-1 p-1 px-2 font-semibold border-l border-gray-400">
+                            DOB: {char.birth_year}
+                          </span>
+                        </div>
+                        <div className="card-inner h-auto flex flex-col px-1 py-3">
+                          <ul className="px-4">
+                            <li className="my-1 mx-0">
+                              Hair Color: {char.hair_color}
+                            </li>
+                            <li className="my-1 mx-0">
+                              Skin Color: {char.skin_color}
+                            </li>
+                            <li className="my-1 mx-0">Gender: {char.gender}</li>
+                            <li className="my-1 mx-0">
+                              Eye Color: {char.eye_color}
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  ))}{' '}
+                  ))}
                 </>
               ) : (
                 <>
@@ -144,21 +139,20 @@ function App() {
                         gender={char.gender}
                         skinColor={char.skin_color}
                       />
-                      <div className="text-xs flex justify-center p-1 text-black bg-yellow">
-                        <span className="mr-1 p-1 px-2 font-semibold">
-                          Mass: {char.mass}
-                        </span>
-                        <span className="mr-1 p-1 px-2 font-semibold border-l border-gray-400">
-                          Height: {char.height}
-                        </span>
-                        <span className="mr-1 p-1 px-2 font-semibold border-l border-gray-400">
-                          DOB: {char.birth_year}
-                        </span>
-                      </div>
-
-                      <div className="card-inner h-auto flex flex-col px-1 py-3">
-                        <CardHomeworld homeworld={char.homeworld['name']} />
-
+                      <div className="hidden hover:block">
+                        <div className="text-xs flex justify-center p-1 text-black bg-yellow">
+                          <span className="mr-1 p-1 px-2 font-semibold">
+                            Mass: {char.mass}
+                          </span>
+                          <span className="mr-1 p-1 px-2 font-semibold border-l border-gray-400">
+                            Height: {char.height}
+                          </span>
+                          <span className="mr-1 p-1 px-2 font-semibold border-l border-gray-400">
+                            DOB: {char.birth_year}
+                          </span>
+                        </div>
+                        <div className="text-xs flex justify-center p-1 text-black bg-yellow"></div>
+                        <CardHomeworld homeworld={char.homeworld} />
                         <ul className="px-4">
                           <li className="my-1 mx-0">
                             Hair Color: {char.hair_color}
@@ -170,13 +164,6 @@ function App() {
                           <li className="my-1 mx-0">
                             Eye Color: {char.eye_color}
                           </li>
-                          {/* <li className="my-1 mx-0">{char.vehicles}</li>
-                      <li className="my-1 mx-0">{char.starships}</li>
-                      <li className="my-1 mx-0">{char.films}</li> */}
-                          {/* <li className="my-1 mx-0">Species: {char.species}</li> */}
-                          {/* <li className="my-1 mx-0">{char.created}</li>
-                      <li className="my-1 mx-0">{char.edited}</li> */}
-                          <li className="my-1 mx-0">{char.url}</li>
                         </ul>
                       </div>
                     </div>

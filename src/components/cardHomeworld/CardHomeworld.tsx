@@ -7,7 +7,7 @@ const CardHomeworld: React.FC<Props> = (props) => {
 
   return (
     <p>
-      <span className="text-sm badge bg-red text-white rounded py-1 px-2 mx-4 border-gray-400 mb-2">
+      <span className="text-sm badge bg-red text-white rounded py-1 px-2 ml-4 border-gray-400 mb-2">
         {homeworld}
       </span>
     </p>
