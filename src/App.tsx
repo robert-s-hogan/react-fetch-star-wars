@@ -42,26 +42,28 @@ function App() {
     <div>
       <Hero />
       <div className="flex justify-center max-w-4xl xl:max-w-7xl container mx-auto mt-8">
-        <form
-          className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full mx-2"
-          onSubmit={(e) => {
-            e.preventDefault();
-            getSearchData();
-          }}
-        >
-          <label htmlFor="character" className="w-full md:col-span-3">
-            <input
-              id="character"
-              className="w-full"
-              value={character}
-              placeholder="Search Star Wars Characters"
-              onChange={(e) => setCharacter(e.target.value)}
-            />
-          </label>
-          <button className="rotate-1" type="submit">
-            Search
-          </button>
-        </form>
+        <div className="max-w-4xl mx-auto">
+          <form
+            className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full mx-2"
+            onSubmit={(e) => {
+              e.preventDefault();
+              getSearchData();
+            }}
+          >
+            <label htmlFor="character" className="w-full md:col-span-3">
+              <input
+                id="character"
+                className="w-full"
+                value={character}
+                placeholder="Search Star Wars Characters"
+                onChange={(e) => setCharacter(e.target.value)}
+              />
+            </label>
+            <button className="rotate-1" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
       </div>
       {searchResults && (
         <p className="text-center my-8 text-white">
