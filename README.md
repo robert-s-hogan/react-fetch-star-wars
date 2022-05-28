@@ -10,8 +10,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/robert-s-hogan/react-query-pagination-assessment">
-    <img src="http://vignette1.wikia.nocookie.net/disney/images/8/8b/Starwars-logo.png" alt="Logo" width="320">
+  <a href="https://github.com/robert-s-hogan/react-fetch-star-wars">
+    <img src="https://rshogan.imgix.net/projects/react-fetch-star-wars/images/home_screenshot.png" alt="Logo" width="320">
   </a>
 
 <h3 align="center">React Pagination Assessment</h3>
@@ -22,32 +22,13 @@
 
 Create a single page application comprised of Item Cards, each of which will display information to a user wherein that information is a subset of data you extract from a sample public API of your choosing from the following list
 
-#### Challenge:
-
-- Create a UI that replicates the UI shown on page 2. Note: Book
-  name/Image is an example of data from your API that you may display
-  to a user.
-- Upon selecting the previous or next button, a user should be able to
-  view a subset of items derived from a list of data. EG items 0-2,  
-  3-5, and so on. Your goal is to sift through API documentation until
-  you find an API that has an endpoint allowing for configuration based
-  on URL parameters.
-- Use React Testing Library for writing tests.
-
-#### Goals:
-
-- Demonstrate knowledge of component composition and focus on component
-  reusability.
-- Demonstrate knowledge of effective test coverage and meaningful tests (EG testing implementation details vs. replicating user
-  interactions)
-
   <p align="center">
 
-  <a href="https://robert-s-hogan.github.io/react-query-pagination-assessment/">View Demo</a>
-  ·
-  <a href="https://github.com/robert-s-hogan/react-query-pagination-assessment/issues">Report Bug</a>
-  ·
-  <a href="https://github.com/robert-s-hogan/react-query-pagination-assessment/issues">Request Feature</a>
+<a href="https://react-fetch-star-wars.vercel.app/">View Demo</a>
+·
+<a href="https://github.com/robert-s-hogan/react-fetch-star-wars/issues">Report Bug</a>
+·
+<a href="https://github.com/robert-s-hogan/react-fetch-star-wars/issues">Request Feature</a>
 
 </p>
 
@@ -81,17 +62,14 @@ Create a single page application comprised of Item Cards, each of which will dis
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://robert-s-hogan.github.io/react-query-pagination-assessment/)
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
 
 - [Star Wars API](https://swapi.dev/) - For all character data
 - [ReactJS](https://reactjs.org/) - For UI and components
+- [TailwindCSS](https://tailwindcss.com/) - For design and CSS
 - [Github](https://github.com/) - For code maintenance
-- [GithubPages](https://pages.github.com/) - To deploy site
-- [ReactQuery](https://react-query.tanstack.com/) - Handles pagination functions and loading data
 - [Axios](https://axios-http.com/docs/intro) - Fetching library
 - [Jest.io](https://jestjs.io/) - For testing
 
@@ -115,7 +93,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/robert-s-hogan/react-query-pagination-assessment.git
+   git clone https://github.com/robert-s-hogan/react-fetch-star-wars.git
    ```
 2. Install NPM packages
    ```sh
@@ -141,10 +119,12 @@ This project can be used for anyone who wants to work with the [Star Wars Free A
 
 ## Roadmap
 
-- [Photo API with Star Wars characters](https://github.com/robert-s-hogan/react-query-pagination-assessment/issues/1) - set up a custom API that scrapes a star wars gallery.
-- [Sound Effects](https://github.com/robert-s-hogan/react-query-pagination-assessment/issues/3) - Add sound to the project
+- [Create complete Star Wars Object](https://swapi.dev/api/) - set up separte fetches to optimize for performance
+- [Add Sound Effects]() - Need to find sounds and landing screen
+- [Add Pagination](https://swapi.dev/api/people/) - for all People in the api
+- [Addition Styling]() - Based on species and create background based on their home planet
 
-See the [open issues](https://github.com/robert-s-hogan/react-query-pagination-assessment/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/robert-s-hogan/react-fetch-star-wars/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -179,7 +159,7 @@ Distributed under the MIT License. See `license.txt` for more information.
 
 Your Name - [@robert_s_hogan](https://twitter.com/robert_s_hogan) - robert.s.hogan@icloud.com
 
-Project Link: [https://github.com/robert-s-hogan/react-query-pagination-assessment](https://github.com/robert-s-hogan/react-query-pagination-assessment)
+Project Link: [https://github.com/robert-s-hogan/react-fetch-star-wars](https://github.com/robert-s-hogan/react-fetch-star-wars)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -187,8 +167,6 @@ Project Link: [https://github.com/robert-s-hogan/react-query-pagination-assessme
 
 ## Acknowledgments
 
-- [Traversy Media's React Pagination Tutorial](https://www.youtube.com/watch?v=IYCa1F-OWmk&t=450s)
-- [Net Ninja's React Query Tutorial](https://www.youtube.com/watch?v=x1rQ61otgtU&list=PL4cUxeGkcC9jpi7Ptjl5b50p9gLjOFani)
 - [MIT License](https://choosealicense.com/licenses/mit/)
 - [Github Img Shields](https://shields.io)
 - [othneildrew's README template](https://github.com/othneildrew/Best-README-Template)
@@ -199,15 +177,15 @@ Project Link: [https://github.com/robert-s-hogan/react-query-pagination-assessme
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/robert-s-hogan/react-query-pagination-assessment.svg?style=for-the-badge
-[contributors-url]: https://github.com/robert-s-hogan/react-query-pagination-assessment/graphs/contributors
+[contributors-url]: https://github.com/robert-s-hogan/react-fetch-star-wars/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/robert-s-hogan/react-query-pagination-assessment.svg?style=for-the-badge
-[forks-url]: https://github.com/robert-s-hogan/react-query-pagination-assessment/network/members
+[forks-url]: https://github.com/robert-s-hogan/react-fetch-star-wars/network/members
 [stars-shield]: https://img.shields.io/github/stars/robert-s-hogan/react-query-pagination-assessment.svg?style=for-the-badge
-[stars-url]: https://github.com/robert-s-hogan/react-query-pagination-assessment/stargazers
+[stars-url]: https://github.com/robert-s-hogan/react-fetch-star-wars/stargazers
 [issues-shield]: https://img.shields.io/github/issues/robert-s-hogan/react-query-pagination-assessment.svg?style=for-the-badge
-[issues-url]: https://github.com/robert-s-hogan/react-query-pagination-assessment/issues
+[issues-url]: https://github.com/robert-s-hogan/react-fetch-star-wars/issues
 [license-shield]: https://img.shields.io/github/license/robert-s-hogan/react-query-pagination-assessment.svg?style=for-the-badge
-[license-url]: https://github.com/robert-s-hogan/react-query-pagination-assessment/blob/master/license.txt
+[license-url]: https://github.com/robert-s-hogan/react-fetch-star-wars/blob/master/license.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/robert-s-hogan
 [product-screenshot]: https://res.cloudinary.com/dmfdjwwgb/image/upload/v1635459300/react-query-pagination/react_query_star_wars_pagination-desktop_czgyr1.jpg
