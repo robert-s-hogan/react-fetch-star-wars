@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-// import { useGetPosts } from './lib/hooks/api-hooks';
-import { useGetAllData } from './lib/hooks/api-all';
+import { useInitialData } from './lib/hooks/api-initial-data';
+import { useGetAllData } from './lib/hooks/api-all-data';
 import { FetchState } from './types';
 import axios from 'axios';
 
@@ -9,9 +9,7 @@ import Hero from './components/hero/Hero';
 import Loading from './components/loading/Loading';
 // import SearchBar from './components/searchBar/SearchBar';
 
-import CardTitle from './components/cardTitle/CardTitle';
-import CardFace from './components/cardFace/CardFace';
-import CardHomeworld from './components/cardHomeworld/CardHomeworld';
+import Card from './components/card/Card';
 
 import './index.css';
 
@@ -21,11 +19,14 @@ function App() {
   const [character, setCharacter] = useState('');
   const [searchResults, setSearchResults] = useState(false);
   const [searchData, setSearchData] = useState([]);
-  const [allData, fetchState, getAllData] = useGetAllData();
+  const [initialData, fetchState, getInitialData] = useInitialData();
+
+  // const [allData, getAllData] = useGetAllData();
 
   useEffect(() => {
     // getData();
-    getAllData();
+    getInitialData();
+    // getAllData();
   }, []);
 
   async function getSearchData() {
@@ -39,7 +40,6 @@ function App() {
 
   return (
     <div>
-      <Header />
       <Hero />
       <div className="flex justify-center max-w-4xl xl:max-w-7xl container mx-auto mt-8">
         <form
@@ -84,89 +84,45 @@ function App() {
         )}
         {fetchState === FetchState.SUCCESS && (
           <div className="mx-3 my-4">
+            {/* {allData.map((data) => (
+              <code>
+                <pre>{JSON.stringify(data, null, 2)}</pre>
+              </code>
+            ))} */}
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
               {searchResults && searchData.length > 0 ? (
                 <>
                   {searchData.map((char) => (
-                    <div className="card rounded-lg relative" key={char.name}>
-                      <CardTitle name={char.name} eyeColor={char.eye_color} />
-                      <CardFace
-                        hairColor={char.hair_color}
-                        eyeColor={char.eye_color}
-                        gender={char.gender}
-                        skinColor={char.skin_color}
-                      />
-                      <div className="hidden hover:block">
-                        <div className="text-xs flex justify-center p-1 text-black bg-yellow none hover:block">
-                          <CardHomeworld homeworld={char.homeworld} />
-                          {char.homeworld}
-                          <span className="mr-1 p-1 px-2 font-semibold">
-                            Mass: {char.mass}
-                          </span>
-                          <span className="mr-1 p-1 px-2 font-semibold border-l border-gray-400">
-                            Height: {char.height}
-                          </span>
-                          <span className="mr-1 p-1 px-2 font-semibold border-l border-gray-400">
-                            DOB: {char.birth_year}
-                          </span>
-                        </div>
-                        <div className="card-inner h-auto flex flex-col px-1 py-3">
-                          <ul className="px-4">
-                            <li className="my-1 mx-0">
-                              Hair Color: {char.hair_color}
-                            </li>
-                            <li className="my-1 mx-0">
-                              Skin Color: {char.skin_color}
-                            </li>
-                            <li className="my-1 mx-0">Gender: {char.gender}</li>
-                            <li className="my-1 mx-0">
-                              Eye Color: {char.eye_color}
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                    <Card
+                      key={char.name}
+                      name={char.name}
+                      mass={char.mass}
+                      height={char.height}
+                      hair_color={char.hair_color}
+                      skin_color={char.skin_color}
+                      eye_color={char.eye_color}
+                      birth_year={char.birth_year}
+                      gender={char.gender}
+                      homeworld={char.homeworld}
+                    />
                   ))}
                 </>
               ) : (
                 <>
-                  {allData.map((char) => (
-                    <div className="card rounded-lg relative" key={char.name}>
-                      <CardTitle name={char.name} eyeColor={char.eye_color} />
-                      <CardFace
-                        hairColor={char.hair_color}
-                        eyeColor={char.eye_color}
-                        gender={char.gender}
-                        skinColor={char.skin_color}
-                      />
-                      <div className="hidden hover:block">
-                        <div className="text-xs flex justify-center p-1 text-black bg-yellow">
-                          <span className="mr-1 p-1 px-2 font-semibold">
-                            Mass: {char.mass}
-                          </span>
-                          <span className="mr-1 p-1 px-2 font-semibold border-l border-gray-400">
-                            Height: {char.height}
-                          </span>
-                          <span className="mr-1 p-1 px-2 font-semibold border-l border-gray-400">
-                            DOB: {char.birth_year}
-                          </span>
-                        </div>
-                        <div className="text-xs flex justify-center p-1 text-black bg-yellow"></div>
-                        <CardHomeworld homeworld={char.homeworld} />
-                        <ul className="px-4">
-                          <li className="my-1 mx-0">
-                            Hair Color: {char.hair_color}
-                          </li>
-                          <li className="my-1 mx-0">
-                            Skin Color: {char.skin_color}
-                          </li>
-                          <li className="my-1 mx-0">Gender: {char.gender}</li>
-                          <li className="my-1 mx-0">
-                            Eye Color: {char.eye_color}
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
+                  {initialData.map((char) => (
+                    <Card
+                      key={char.name}
+                      name={char.name}
+                      mass={char.mass}
+                      height={char.height}
+                      hair_color={char.hair_color}
+                      skin_color={char.skin_color}
+                      eye_color={char.eye_color}
+                      birth_year={char.birth_year}
+                      gender={char.gender}
+                      homeworld={char.homeworld}
+                    />
                   ))}
                 </>
               )}
@@ -174,6 +130,7 @@ function App() {
           </div>
         )}
       </div>
+      <Header />
     </div>
   );
 }
