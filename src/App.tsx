@@ -66,7 +66,7 @@ function App() {
         </div>
       </div>
       {searchResults && (
-        <p className="text-center my-8 text-white">
+        <p className="text-center text-white my-8">
           <span className="letter-box font-light text-center bg-red search-results mr-2 text-lg">
             {searchData.length} {''}results found
           </span>
