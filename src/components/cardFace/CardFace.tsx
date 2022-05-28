@@ -8,7 +8,7 @@ interface Props {
 const CardFace: React.FC<Props> = (props) => {
   const { hairColor, eyeColor, skinColor } = props;
   return (
-    <div className="container relative mx-auto my-8 py-4">
+    <div className="container relative mx-auto my-8">
       <div
         className={`hair relative w-40 h-40 md:w-48 md:h-48 xl:w-40 xl:h-40 mx-auto bg-${hairColor} rounded-full rounded-tr-3xl`}
       >
