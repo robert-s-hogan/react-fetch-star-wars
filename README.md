@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/robert-s-hogan/react-fetch-star-wars">
-    <img src="https://rshogan.imgix.net/projects/react-fetch-star-wars/images/home_screenshot.png" alt="Logo" width="320">
+    <img src="https://rshogan.imgix.net/projects/react-fetch-star-wars/images/home_screenshot.png" alt="Logo" width="500">
   </a>
 
 <h3 align="center">React Pagination Assessment</h3>
