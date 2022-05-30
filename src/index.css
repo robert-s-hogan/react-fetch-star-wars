@@ -177,6 +177,11 @@ body {
   background: #ffd700;
 }
 
-.bg-orange-red {
-  background: #e04b30;
+/* LANDSCAPES */
+.bg-naboo {
+  background: linear-gradient(to bottom, #1111de 0%, #0cdad0 70%, #0cdad0 100%);
+}
+.tree {
+  clip-path: polygon(50% 0%, 22% 100%, 75% 100%);
+  box-shadow: 2px 0 2px 4px rgba(0, 0, 0, 0.1);
 }

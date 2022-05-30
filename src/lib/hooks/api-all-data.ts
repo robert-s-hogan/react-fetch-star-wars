@@ -9,10 +9,17 @@ export function useGetAllData() {
       let urls = [];
       let nextUrl = 'https://swapi.dev/api/people/';
 
-      let res = await axios(nextUrl);
-      let resData = res.data as Array<PostData>;
+      let people = [] as Array<PostData>;
 
-      console.log(urls);
+      while (nextUrl) {
+        const res = await axios.get(nextUrl);
+        const resData = res.data as Array<PostData>;
+        const { next, results } = await resData;
+
+        nextUrl = next;
+        people = [...people, ...results];
+      }
+      setAllData(people);
 
       // let characterResponseJson = await characterResponse.data.results;
       // let films = await Promise.all(

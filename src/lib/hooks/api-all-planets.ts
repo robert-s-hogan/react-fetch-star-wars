@@ -18,7 +18,6 @@ export function useGetAllPlanets() {
         nextPage = next;
         planets = [...planets, ...results];
       }
-
       setAllPlanetData(planets);
     } catch (err) {
       consolelog(err);

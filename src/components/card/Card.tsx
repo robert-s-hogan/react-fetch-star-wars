@@ -62,6 +62,7 @@ const Card: React.FC<Props> = (props) => {
       />
       <HomeworldBackground
         homeworld={homeworldName}
+        planet={homeworld}
         styles="card-background absolute overflow-hidden inner-box absolute h-96 w-96 lg:w-80 xl:w-72 -z-10"
       />
       {!isShown && (

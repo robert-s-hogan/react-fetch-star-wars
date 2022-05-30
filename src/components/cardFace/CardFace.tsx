@@ -1,29 +1,14 @@
-import { useState, useEffect } from 'react';
-
 interface Props {
   hairColor: string;
   eyeColor: string;
   // gender: string;
   skinColor: string;
-  homeworld: string;
   styles: string;
   fetchData: (url: string) => void;
 }
 
 const CardFace: React.FC<Props> = (props) => {
-  const { hairColor, eyeColor, skinColor, homeworld, styles } = props;
-  const [homeworldName, setHomeworldName] = useState('');
-
-  async function fetchData(url) {
-    const response = await fetch(url);
-    const json = await response.json();
-    setHomeworldName(json.name);
-    return json.name;
-  }
-
-  useEffect(() => {
-    fetchData(homeworld);
-  }, [homeworld]);
+  const { hairColor, eyeColor, skinColor, styles } = props;
 
   return (
     <div className={styles}>

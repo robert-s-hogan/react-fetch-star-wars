@@ -29,8 +29,20 @@ module.exports = {
     },
     extend: {
       spacing: {
+        18: '4.5rem',
+        22: '5.5rem',
+        41: '10.25rem',
+        54: '13.5rem',
+        58: '14.5rem',
+        62: '15.5rem',
+        66: '16.5rem',
+        68: '17rem',
         128: '32rem',
         144: '36rem',
+      },
+      rotate: {
+        8: '8deg',
+        '-8': '-8deg',
       },
       borderRadius: {
         '4xl': '2rem',
