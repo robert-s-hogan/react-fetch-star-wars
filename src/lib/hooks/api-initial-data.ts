@@ -12,7 +12,7 @@ export function useInitialData() {
       setFetchState(FetchState.LOADING);
 
       const promise = Promise.allSettled([
-        await axios.get('https://swapi.dev/api/people/'),
+        await axios.get('https://swapi.dev/api/people/?page=2'),
       ]);
 
       const [starWarsPeople] = await promise;

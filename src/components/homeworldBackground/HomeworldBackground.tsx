@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import Desert from './desert/Desert';
 import Plains from './plains/Plains';
 import Grasslands from './grasslands/Grasslands';
+import Cityscape from './cityscape/Cityscape';
+import Mountains from './mountain/Mountains';
+import Unknown from './unknown/Unknown';
+import Ocean from './ocean/Ocean';
 
 interface Props {
   homeworld: string;
@@ -36,10 +40,23 @@ const HomeworldBackground: React.FC<Props> = (props) => {
         case 'deserts':
           return <Desert homeworld={homeworldName} terrain={terrain} />;
         case 'grasslands':
+        case 'grassy hills':
+        case 'grass':
           return <Grasslands homeworld={homeworldName} terrain={terrain} />;
+        case 'cityscape':
+        case 'city':
+        case 'urban':
+        case 'urban areas':
+          return <Cityscape homeworld={homeworldName} terrain={terrain} />;
         case 'plains':
-        case 'mountains':
           return <Plains homeworld={homeworldName} terrain={terrain} />;
+        case 'mountains':
+          return <Mountains homeworld={homeworldName} terrain={terrain} />;
+        case 'unknown':
+          return <Unknown homeworld={homeworldName} terrain={terrain} />;
+        case 'ocean':
+        case 'oceans':
+          return <Ocean homeworld={homeworldName} terrain={terrain} />;
         default:
           return (
             <div
