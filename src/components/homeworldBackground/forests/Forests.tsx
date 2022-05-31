@@ -9,14 +9,24 @@ interface Props {
 const Forests: React.FC<Props> = (props) => {
   const { homeworld, terrain } = props;
 
+  const [findTerrain, setfindTerrain] = useState('');
+
+  async function selectTerrain(terrain: string) {
+    let tempFemale = terrain.search('rainforest');
+    if (tempFemale === 0) {
+      setfindTerrain('rainforest');
+    }
+  }
+
   const [homeworldName, setHomeworldName] = useState('');
   useEffect(() => {
     setHomeworldName(homeworld);
-  }, [homeworld]);
+    selectTerrain(terrain);
+  }, [homeworld, terrain]);
 
   return (
-    <div className="w-96 h-96 relative lg:w-80 xl:w-72 bg-forests z-0">
-      {terrain && (
+    <div className="w-96 h-96 relative lg:w-80 xl:w-72 bg-forests -z-1">
+      {findTerrain && (
         <div className={`absolute w-96 h-96 z-5 bg-${terrain}`}></div>
       )}
       <h3 className="z-20 absolute right-0 m-0 uppercase p-4 text-2xl font-light pr-6 text-black">
