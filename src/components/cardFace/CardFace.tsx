@@ -59,7 +59,7 @@ const CardFace: React.FC<Props> = (props) => {
         )}
       </div>
       <div
-        className={`face top-4 right-32 absolute w-40 h-40 rounded-full bg-${cleanSkin}`}
+        className={`face shadow-inner top-4 right-32 absolute w-40 h-40 rounded-full bg-${cleanSkin}`}
       >
         <div className="smile1 top-24 left-8 bg-white h-12 w-12 absolute rounded-bl-full"></div>
         <div className="smile2 top-24 left-20 bg-white h-12 w-12 absolute rounded-br-full"></div>
