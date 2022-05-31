@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 interface Props {
   homeworld: string;
+  terrain: string | null;
 }
 
 const Desert: React.FC<Props> = (props) => {

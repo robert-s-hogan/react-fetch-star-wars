@@ -141,9 +141,7 @@ body {
 .background-pink {
   @apply bg-pink;
 }
-.background-unknown {
-  @apply bg-white;
-}
+
 .background-hazel {
   @apply bg-green;
 }

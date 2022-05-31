@@ -73,7 +73,7 @@
   /* top: 150px; */
   animation: twinkle 4s infinite;
 }
-@keyframes twinkle {
+/* @keyframes twinkle {
   0% {
     transform: scale(1, 1);
     background: rgba(255, 255, 255, 0);
@@ -92,4 +92,4 @@
     background: rgba(255, 255, 255, 0);
     transform: scale(1, 1);
   }
-}
+} */

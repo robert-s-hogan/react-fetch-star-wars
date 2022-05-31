@@ -1,11 +1,19 @@
 import { useState, useEffect } from 'react';
-import Desert from './desert/Desert';
-import Plains from './plains/Plains';
-import Grasslands from './grasslands/Grasslands';
+import Barren from './barren/Barren';
 import Cityscape from './cityscape/Cityscape';
+import Desert from './desert/Desert';
+import Forests from './forests/Forests';
+import GasGiant from './gasGiant/GasGiant';
+import Grasslands from './grasslands/Grasslands';
+import Jungles from './jungle/Jungle';
+import Lakes from './lakes/Lakes';
 import Mountains from './mountain/Mountains';
-import Unknown from './unknown/Unknown';
 import Ocean from './ocean/Ocean';
+import Plains from './plains/Plains';
+import Rocky from './rocky/Rocky';
+import RockyIslands from './rockyIslands/RockyIslands';
+import ToxicCloudsea from './toxicCloudsea/ToxicCloudsea';
+import Unknown from './unknown/Unknown';
 
 interface Props {
   homeworld: string;
@@ -36,20 +44,38 @@ const HomeworldBackground: React.FC<Props> = (props) => {
   let findHomeworld = (terrain: string) => {
     try {
       switch (terrain) {
+        case 'barren':
+          return <Barren homeworld={homeworldName} terrain={terrain} />;
+        case 'toxic cloudsea':
+          return <ToxicCloudsea homeworld={homeworldName} terrain={terrain} />;
         case 'desert':
         case 'deserts':
           return <Desert homeworld={homeworldName} terrain={terrain} />;
         case 'grasslands':
         case 'grassy hills':
         case 'grass':
+        case 'verdant':
           return <Grasslands homeworld={homeworldName} terrain={terrain} />;
+        case 'jungle':
+        case 'jungles':
+          return <Jungles homeworld={homeworldName} terrain={terrain} />;
+        case 'gas giant':
+          return <GasGiant homeworld={homeworldName} terrain={terrain} />;
+        case 'forest':
+        case 'forests':
+        case 'rain forest':
+        case 'rainforests':
+          return <Forests homeworld={homeworldName} terrain={terrain} />;
         case 'cityscape':
+        case 'cities':
         case 'city':
         case 'urban':
         case 'urban areas':
           return <Cityscape homeworld={homeworldName} terrain={terrain} />;
         case 'plains':
           return <Plains homeworld={homeworldName} terrain={terrain} />;
+        case 'lakes':
+          return <Lakes homeworld={homeworldName} terrain={terrain} />;
         case 'mountains':
           return <Mountains homeworld={homeworldName} terrain={terrain} />;
         case 'unknown':
@@ -57,6 +83,12 @@ const HomeworldBackground: React.FC<Props> = (props) => {
         case 'ocean':
         case 'oceans':
           return <Ocean homeworld={homeworldName} terrain={terrain} />;
+        case 'rocky islands':
+          return <RockyIslands homeworld={homeworldName} terrain={terrain} />;
+        case 'rocky':
+        case 'rocky canyons':
+        case 'rock':
+          return <Rocky homeworld={homeworldName} terrain={terrain} />;
         default:
           return (
             <div
@@ -71,7 +103,11 @@ const HomeworldBackground: React.FC<Props> = (props) => {
     }
   };
 
-  return <div className={styles}>{findHomeworld(terrain)}</div>;
+  return (
+    <div className={styles} id={terrain}>
+      {findHomeworld(terrain)}
+    </div>
+  );
 };
 
 export default HomeworldBackground;

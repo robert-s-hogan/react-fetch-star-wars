@@ -26,7 +26,7 @@ function App() {
   useEffect(() => {
     // getData();
     getInitialData();
-    // getAllData();
+    getAllData();
   }, []);
 
   async function getSearchData() {

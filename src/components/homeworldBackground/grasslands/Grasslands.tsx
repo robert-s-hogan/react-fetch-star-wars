@@ -3,6 +3,7 @@ import './grasslands.css';
 
 interface Props {
   homeworld: string;
+  terrain: string | null;
 }
 
 const Grasslands: React.FC<Props> = (props) => {

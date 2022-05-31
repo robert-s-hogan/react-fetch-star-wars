@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './cityscape.css';
 interface Props {
   homeworld: string;
+  terrain: string | null;
 }
 
 const Cityscape: React.FC<Props> = (props) => {
@@ -14,7 +15,7 @@ const Cityscape: React.FC<Props> = (props) => {
 
   return (
     <div className="w-96 h-96 bg-cityscape">
-      <h3 className="z-10 absolute right-0 m-0 uppercase p-4 text-2xl font-light pr-6 text-brown">
+      <h3 className="z-10 absolute right-0 m-0 uppercase p-4 text-2xl font-light pr-6 text-white">
         {homeworldName}
       </h3>
       <div id="skylight"></div>
@@ -7188,9 +7189,9 @@ const Cityscape: React.FC<Props> = (props) => {
               y2="261.906"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#292942" />
-              <stop offset="0.684848" stop-color="#101027" />
-              <stop offset="1" stop-color="#05051D" />
+              <stop stopColor="#292942" />
+              <stop offset="0.684848" stopColor="#101027" />
+              <stop offset="1" stopColor="#05051D" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_107_12040"
@@ -7200,8 +7201,8 @@ const Cityscape: React.FC<Props> = (props) => {
               y2="238.637"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#172023" />
-              <stop offset="1" stop-color="#131617" />
+              <stop stopColor="#172023" />
+              <stop offset="1" stopColor="#131617" />
             </linearGradient>
             <linearGradient
               id="paint2_linear_107_12040"
@@ -7211,8 +7212,8 @@ const Cityscape: React.FC<Props> = (props) => {
               y2="238.511"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#172023" />
-              <stop offset="1" stop-color="#131617" />
+              <stop stopColor="#172023" />
+              <stop offset="1" stopColor="#131617" />
             </linearGradient>
             <linearGradient
               id="paint3_linear_107_12040"
@@ -7222,8 +7223,8 @@ const Cityscape: React.FC<Props> = (props) => {
               y2="238.44"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#172023" />
-              <stop offset="1" stop-color="#131617" />
+              <stop stopColor="#172023" />
+              <stop offset="1" stopColor="#131617" />
             </linearGradient>
             <linearGradient
               id="paint4_linear_107_12040"
@@ -7233,8 +7234,8 @@ const Cityscape: React.FC<Props> = (props) => {
               y2="245.677"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#172023" />
-              <stop offset="1" stop-color="#131617" />
+              <stop stopColor="#172023" />
+              <stop offset="1" stopColor="#131617" />
             </linearGradient>
           </defs>
         </svg>
