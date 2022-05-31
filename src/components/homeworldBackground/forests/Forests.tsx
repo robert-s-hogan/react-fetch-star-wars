@@ -17,7 +17,7 @@ const Forests: React.FC<Props> = (props) => {
   return (
     <div className="w-96 h-96 relative lg:w-80 xl:w-72 bg-forests z-0">
       {terrain && (
-        <div className={`absolute w-96 h-96 -z-5 bg-${terrain}`}></div>
+        <div className={`absolute w-96 h-96 z-5 bg-${terrain}`}></div>
       )}
       <h3 className="z-20 absolute right-0 m-0 uppercase p-4 text-2xl font-light pr-6 text-black">
         {homeworldName}

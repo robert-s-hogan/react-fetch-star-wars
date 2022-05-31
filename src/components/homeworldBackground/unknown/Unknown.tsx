@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './unknown.css';
+import css from './unknown.css';
 
 interface Props {
   homeworld: string;
@@ -19,7 +19,7 @@ const Mountains: React.FC<Props> = (props) => {
       <h3 className="z-10 absolute right-0 m-0 uppercase p-4 text-2xl font-light pr-6 text-white">
         {homeworldName}
       </h3>
-      <div id="stars"></div>
+      <div className={css.stars} id="stars"></div>
       <div id="stars2"></div>
       <div id="stars3"></div>
       <div id="title"></div>

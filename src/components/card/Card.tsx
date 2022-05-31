@@ -53,6 +53,7 @@ const Card: React.FC<Props> = (props) => {
       onMouseLeave={() => setIsShown(true)}
     >
       <CardFace
+        name={name}
         hairColor={hair_color}
         eyeColor={eye_color}
         gender={gender}

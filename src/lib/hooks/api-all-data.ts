@@ -6,7 +6,7 @@ export function useGetAllData() {
   const [allData, setAllData] = useState<Array<PostData>>([]);
   const getAllData = async () => {
     try {
-      let urls = [];
+      // let urls = [];
       let nextUrl = 'https://swapi.dev/api/people/';
 
       let people = [] as Array<PostData>;

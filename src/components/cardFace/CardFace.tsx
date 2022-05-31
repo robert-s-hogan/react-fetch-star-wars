@@ -3,48 +3,60 @@ import { useState, useEffect } from 'react';
 interface Props {
   hairColor: string;
   eyeColor: string;
-  // gender: string;
+  gender: string;
   skinColor: string;
   styles: string;
   updateColors: (url: string) => void;
 }
 
 const CardFace: React.FC<Props> = (props) => {
-  const { hairColor, eyeColor, skinColor, styles } = props;
+  const { hairColor, eyeColor, skinColor, gender, styles } = props;
 
   const [cleanHair, setCleanHair] = useState('');
   const [cleanEye, setCleanEye] = useState('');
   const [cleanSkin, setCleanSkin] = useState('');
+  const [female, setFemale] = useState('');
 
-  async function updateHairColors(url) {
-    let temp = url.replace(/, /g, '-');
-    // console.log(temp);
+  async function selectGender(gender: string) {
+    let tempFemale = gender.search('female');
+    if (tempFemale === 0) {
+      setFemale('female');
+    }
+  }
+
+  async function updateHairColors(hairColor: string) {
+    let temp = hairColor.replace(/, /g, '-');
     setCleanHair(temp);
   }
 
-  async function updateEyeColors(url) {
-    let temp = url.replace(/, /g, '-');
-    // console.log(temp);
+  async function updateEyeColors(eyeColor: string) {
+    let temp = eyeColor.replace(/, /g, '-');
     setCleanEye(temp);
   }
-  async function updateSkinColors(url) {
-    let temp = url.replace(/, /g, '-');
+  async function updateSkinColors(skinColor: string) {
+    let temp = skinColor.replace(/, /g, '-');
     setCleanSkin(temp);
   }
+
   useEffect(() => {
     updateHairColors(hairColor);
     updateEyeColors(eyeColor);
     updateSkinColors(skinColor);
-  }, [hairColor, skinColor, eyeColor]);
+    selectGender(gender);
+  }, [hairColor, skinColor, eyeColor, gender]);
 
   return (
     <div className={styles}>
       <div
-        className={`hair absolute top-2 right-32 w-40 h-40 mx-auto rounded-full rounded-tr-3xl bg-${cleanHair} `}
+        className={
+          !female
+            ? `hair absolute top-2 right-34 w-40 h-40 mx-auto rounded-full rounded-tr-3xl bg-${cleanHair} text-white`
+            : `hair absolute top-2 right-34 w-40 h-48 mx-auto bg-black rounded-t-full rounded-3xl`
+        }
       >
-        {/* <div
-          className={`bangs relative w-32 h-16 md:w-48 md:h-48 mx-auto bg-black rounded-full rounded-b-3xl z-10`}
-        ></div> */}
+        {female && (
+          <div className="bangs relative w-32 h-16 mx-auto bg-black rounded-full rounded-b-3xl z-10"></div>
+        )}
       </div>
       <div
         className={`face top-4 right-32 absolute w-40 h-40 rounded-full bg-${cleanSkin}`}

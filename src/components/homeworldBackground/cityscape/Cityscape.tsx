@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './cityscape.css';
+import css from './cityscape.module.css';
 interface Props {
   homeworld: string;
   terrain: string | null;
@@ -14,16 +14,16 @@ const Cityscape: React.FC<Props> = (props) => {
   }, [homeworld]);
 
   return (
-    <div className="w-96 h-96 bg-cityscape">
+    <div className={`w-96 h-96 ${css.bgCityscape}`}>
       <h3 className="z-10 absolute right-0 m-0 uppercase p-4 text-2xl font-light pr-6 text-white">
         {homeworldName}
       </h3>
-      <div id="skylight"></div>
-      <div id="road"></div>
+      <div className={css.skylight}></div>
+      <div className={css.road}></div>
 
-      <div id="city">
+      <div className={css.city}>
         <svg
-          id="citylights"
+          className={css.citylights}
           viewBox="0 0 1059 263"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -7240,7 +7240,7 @@ const Cityscape: React.FC<Props> = (props) => {
           </defs>
         </svg>
       </div>
-      <div id="moonlight">
+      <div className={css.moonlight}>
         <span></span>
       </div>
     </div>
