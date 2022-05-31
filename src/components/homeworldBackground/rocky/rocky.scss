@@ -33,10 +33,21 @@
 }
 
 .dirt {
-  background-color: #b58a5e;
+  // background-color: #b58a5e;
+  // width: 100%;
+  // height: 160px;
+  // bottom: 0;
+
+  position: absolute;
+  bottom: 100px;
+  height: 500px;
   width: 100%;
-  height: 160px;
-  bottom: 0;
+  background-color: #cec0a8;
+  z-index: -1;
+  transform: translate3d(-50%, 58%, -135vh) rotateX(79deg);
+  background-size: 800px;
+  background-image: url(http://www.sketchuptut.com/sites/default/files/resource-image/Sand_texture_sketchup_warehouse_type09.jpg);
+  background-repeat: repeat;
 }
 
 .rocky-sun {

@@ -12,6 +12,7 @@ import Ocean from './ocean/Ocean';
 import Plains from './plains/Plains';
 import Rocky from './rocky/Rocky';
 import RockyIslands from './rockyIslands/RockyIslands';
+import Scrublands from './scrublands/Scrublands';
 import ToxicCloudsea from './toxicCloudsea/ToxicCloudsea';
 import Unknown from './unknown/Unknown';
 
@@ -75,6 +76,7 @@ const HomeworldBackground: React.FC<Props> = (props) => {
         case 'plains':
           return <Plains homeworld={homeworldName} terrain={terrain} />;
         case 'lakes':
+        case 'swamps':
           return <Lakes homeworld={homeworldName} terrain={terrain} />;
         case 'mountains':
           return <Mountains homeworld={homeworldName} terrain={terrain} />;
@@ -89,6 +91,8 @@ const HomeworldBackground: React.FC<Props> = (props) => {
         case 'rocky canyons':
         case 'rock':
           return <Rocky homeworld={homeworldName} terrain={terrain} />;
+        case 'scrublands':
+          return <Scrublands homeworld={homeworldName} terrain={terrain} />;
         default:
           return (
             <div
