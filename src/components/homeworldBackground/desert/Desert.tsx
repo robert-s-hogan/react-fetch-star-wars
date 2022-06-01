@@ -14,7 +14,7 @@ const Desert: React.FC<Props> = (props) => {
   }, [homeworld]);
 
   return (
-    <div className="w-96 h-96">
+    <div className="h-96 w-96 lg:w-80 xl:w-72">
       <h3 className="z-10 absolute right-0 m-0 uppercase p-4 text-2xl font-light pr-6 text-brown">
         {homeworldName}
       </h3>

@@ -11,24 +11,27 @@ export function useInitialData() {
     try {
       setFetchState(FetchState.LOADING);
 
-      const promise = Promise.allSettled([
-        await axios.get('https://swapi.dev/api/people/?page=2'),
-      ]);
+      let nextUrl = 'https://swapi.dev/api/people/?page=1';
 
-      const [starWarsPeople] = await promise;
+      const res = await axios.get(nextUrl);
+      // console.log(`${results.length} results`);
+      // console.log(`${next} next`);
+      // console.log(`${previous} previous`);
+      // console.log(`${currentPage} currentPage`);
 
-      const peopleData = starWarsPeople.value.data.results;
+      // const data = res.data as Array<PostData>;
 
-      {
-        peopleData.map((person) => {
-          const cleanedSkinColor = person.skin_color.replace(/, /g, '-');
-          person.skin_color = cleanedSkinColor;
-          const cleanedHairColor = person.hair_color.replace(/, /g, '-');
-          person.hair_color = cleanedHairColor;
-        });
-      }
-      // console.log(allData);
-      setInitialData(peopleData);
+      // firstThree = data.slice(0, 3);
+      setInitialData(res.data.results);
+
+      // const promise = Promise.allSettled([
+      //   await axios.get('https://swapi.dev/api/people/'),
+      // ]);
+
+      // const [starWarsPeople] = await promise;
+
+      // const peopleData = starWarsPeople.value.data.results;
+
       setFetchState(FetchState.SUCCESS);
     } catch (err) {
       setFetchState(FetchState.ERROR);

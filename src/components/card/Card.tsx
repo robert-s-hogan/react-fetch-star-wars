@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import CardTitle from '../cardTitle/CardTitle';
 import CardFace from '../cardFace/CardFace';
-import CardHomeworld from '../cardHomeworld/CardHomeworld';
+// import CardHomeworld from '../cardHomeworld/CardHomeworld';
 import HomeworldBackground from '../homeworldBackground/HomeworldBackground';
 
 interface Props {
@@ -77,8 +77,8 @@ const Card: React.FC<Props> = (props) => {
             }
           >
             <div className="card-inner h-full flex flex-col">
-              <ul className="px-4 mt-2">
-                <CardHomeworld homeworld={homeworld} />
+              <ul className="px-4">
+                {/* <CardHomeworld homeworld={homeworldName} /> */}
                 <li className="mx-0">Mass: {mass}</li>
                 <li className="mx-0">Height: {height}</li>
                 <li className="mx-0">DOB: {birth_year}</li>

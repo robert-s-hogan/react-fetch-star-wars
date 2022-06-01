@@ -26,7 +26,7 @@
   left: -30%;
   color: #404c5d;
   text-align: right;
-  animation: shine 2s linear infinite;
+  animation: shine 5s linear infinite;
 }
 
 .stars:before,
@@ -40,13 +40,13 @@
 .stars:before {
   top: 30%;
   right: -4%;
-  animation: shine 2s linear infinite alternate-reverse;
+  animation: shine 5s linear infinite alternate-reverse;
 }
 
 .stars:after {
   top: 10%;
   right: 10%;
-  animation: shine 1.5s linear infinite;
+  animation: shine 3.5s linear infinite;
 }
 
 .stars2 {
@@ -72,7 +72,7 @@
   background-color: #fff;
   width: 0.3em;
   height: 0.3em;
-  animation: cometFlight 3s ease infinite;
+  animation: cometFlight 8s ease infinite;
 }
 
 .mountains {

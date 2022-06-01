@@ -248,41 +248,41 @@
   left: -0.5vmin;
   box-shadow: inherit;
 }
-@keyframes verticalise {
-  0%,
-  10% {
-    transform: rotate(4deg);
-  }
-  30%,
-  70% {
-    transform: rotate(0);
-  }
-}
-@keyframes verticalise-1 {
-  0%,
-  10% {
-    transform: rotate(-2deg);
-  }
-  45%,
-  70% {
-    transform: rotate(0) translateY(-6vmin);
-  }
-}
-@keyframes rise {
-  100% {
-    transform: translate3d(0, -100vh, 20vmin);
-  }
-}
-@keyframes rise-reflection {
-  30% {
-    opacity: 0;
-    transform: translate3d(0, 5vmin, 0);
-  }
-  100% {
-    opacity: 0;
-    transform: translate3d(0, 80vmin, 0);
-  }
-}
+// @keyframes verticalise {
+//   0%,
+//   10% {
+//     transform: rotate(4deg);
+//   }
+//   30%,
+//   70% {
+//     transform: rotate(0);
+//   }
+// }
+// @keyframes verticalise-1 {
+//   0%,
+//   10% {
+//     transform: rotate(-2deg);
+//   }
+//   45%,
+//   70% {
+//     transform: rotate(0) translateY(-6vmin);
+//   }
+// }
+// @keyframes rise {
+//   100% {
+//     transform: translate3d(0, -100vh, 20vmin);
+//   }
+// }
+// @keyframes rise-reflection {
+//   30% {
+//     opacity: 0;
+//     transform: translate3d(0, 5vmin, 0);
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: translate3d(0, 80vmin, 0);
+//   }
+// }
 .sun-container {
   overflow: hidden;
   width: 100%;
@@ -296,19 +296,19 @@
   top: 0;
   bottom: 0;
   background: radial-gradient(circle at 60% 100%, var(--s2), transparent);
-  animation: fade 20s infinite;
+  animation: fade 30s infinite;
   mix-blend-mode: color-burn;
 }
 
-@keyframes fade {
-  10% {
-    opacity: 1;
-  }
-  30%,
-  70% {
-    opacity: 0;
-  }
-}
+// @keyframes fade {
+//   10% {
+//     opacity: 1;
+//   }
+//   30%,
+//   70% {
+//     opacity: 0;
+//   }
+// }
 .sun-container-reflection {
   top: 50%;
   background: radial-gradient(circle at 60% 0%, var(--s2), transparent);
@@ -338,42 +338,42 @@
   filter: blur(1px);
 }
 
-@-webkit-keyframes light {
-  5% {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-  10% {
-    opacity: 0.6;
-    transform: scaleX(1) translate3d(5%, 0, 0);
-  }
-  15% {
-    opacity: 0.6;
-    transform: scaleX(1) translate3d(-5%, 0, 0);
-  }
-  20% {
-    opacity: 0;
-    transform: scaleX(0.1) translate3d(0, 0, 0);
-  }
-}
-@keyframes light {
-  5% {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-  10% {
-    opacity: 0.6;
-    transform: scaleX(1) translate3d(5%, 0, 0);
-  }
-  15% {
-    opacity: 0.6;
-    transform: scaleX(1) translate3d(-5%, 0, 0);
-  }
-  20% {
-    opacity: 0;
-    transform: scaleX(0.1) translate3d(0, 0, 0);
-  }
-}
+// @-webkit-keyframes light {
+//   5% {
+//     opacity: 1;
+//     transform: scaleX(1);
+//   }
+//   10% {
+//     opacity: 0.6;
+//     transform: scaleX(1) translate3d(5%, 0, 0);
+//   }
+//   15% {
+//     opacity: 0.6;
+//     transform: scaleX(1) translate3d(-5%, 0, 0);
+//   }
+//   20% {
+//     opacity: 0;
+//     transform: scaleX(0.1) translate3d(0, 0, 0);
+//   }
+// }
+// @keyframes light {
+//   5% {
+//     opacity: 1;
+//     transform: scaleX(1);
+//   }
+//   10% {
+//     opacity: 0.6;
+//     transform: scaleX(1) translate3d(5%, 0, 0);
+//   }
+//   15% {
+//     opacity: 0.6;
+//     transform: scaleX(1) translate3d(-5%, 0, 0);
+//   }
+//   20% {
+//     opacity: 0;
+//     transform: scaleX(0.1) translate3d(0, 0, 0);
+//   }
+// }
 .light-1 {
   top: calc(50% + 2vmin);
   animation-delay: 0.5s;

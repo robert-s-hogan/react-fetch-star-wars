@@ -183,3 +183,13 @@ body {
   clip-path: polygon(50% 0%, 22% 100%, 75% 100%);
   box-shadow: 2px 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

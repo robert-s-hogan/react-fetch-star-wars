@@ -7,13 +7,10 @@ export function useSingleFetch() {
 
   const getSingleFetchData = async (url) => {
     try {
-      const promise = Promise.allSettled([await axios.get(url)]);
+      const res = await axios.get(url);
+      const data = res.data as Array<PostData>;
 
-      const [starWarsPeople] = await promise;
-
-      const peopleData = starWarsPeople.value.data.results;
-
-      setSingleFetchData(peopleData);
+      setSingleFetchData(data);
     } catch (err) {
       console.log(err);
     }
