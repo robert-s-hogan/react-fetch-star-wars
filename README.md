@@ -157,7 +157,7 @@ Distributed under the MIT License. See `license.txt` for more information.
 
 ## Contact
 
-Your Name - [@robert_s_hogan](https://twitter.com/robert_s_hogan) - robert.s.hogan@icloud.com
+Robert Hogan - [@robert_s_hogan](https://twitter.com/robert_s_hogan) - robert.s.hogan@icloud.com
 
 Project Link: [https://github.com/robert-s-hogan/react-fetch-star-wars](https://github.com/robert-s-hogan/react-fetch-star-wars)
 
