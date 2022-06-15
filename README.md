@@ -121,7 +121,7 @@ This project can be used for anyone who wants to work with the [Star Wars Free A
 
 - [Create complete Star Wars Object](https://swapi.dev/api/) - set up separte fetches to optimize for performance
 - [Add Sound Effects]() - Need to find sounds and landing screen
-- [Add Pagination](https://swapi.dev/api/people/) - for all People in the api
+- ~~[Add Pagination](https://swapi.dev/api/people/) - for all People in the api~~
 - [Addition Styling]() - Based on species and create background based on their home planet
 
 See the [open issues](https://github.com/robert-s-hogan/react-fetch-star-wars/issues) for a full list of proposed features (and known issues).
